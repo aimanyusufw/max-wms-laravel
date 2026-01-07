@@ -9,5 +9,5 @@ class DeliveryNote extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['sj_number', 'delivery_order_id', 'issue_date'];
+    protected $fillable = ['dn_number', 'delivery_order_id', 'issue_date'];
 }

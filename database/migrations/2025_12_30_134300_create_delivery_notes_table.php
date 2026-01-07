@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('delivery_notes', function (Blueprint $table) {
             $table->id();
-            $table->string("do_number")->unique();
+            $table->string("dn_number")->unique();
             $table->foreignId('delivery_order_id')->constrained()->cascadeOnDelete();
             $table->date("issue_date")->nullable();
             $table->timestamps();
