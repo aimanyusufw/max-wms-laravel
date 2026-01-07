@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class DeliveryOrder extends Model
+{
+    use SoftDeletes;
+
+    protected $fillable = ['do_number', 'customer_id', 'order_date', 'status'];
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+}
