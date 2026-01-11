@@ -10,6 +10,7 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\Support\Enums\Width;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -30,7 +31,16 @@ class DashboardPanelProvider extends PanelProvider
             ->login()
             ->colors([
                 'primary' => Color::Amber,
+                'info' => Color::Sky,
+                'gray' => Color::Zinc,
+                'success' => Color::Emerald,
+                'danger' => Color::Rose,
+                'warning' => Color::Orange,
             ])
+            ->font('Inter')
+            ->maxContentWidth(Width::Full)
+            ->sidebarCollapsibleOnDesktop()
+            ->unsavedChangesAlerts()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
